@@ -1,11 +1,25 @@
 // Initialize Firebase
 // Make sure to match the configuration to the script version number in the HTML
 // (Ex. 3.0 != 3.7.0)
-
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCXFsavNw_VLVouWdzOTiu9q3BDPl1MYqc",
+    authDomain: "codersbay-test-2be11.firebaseapp.com",
+    databaseURL: "https://codersbay-test-2be11.firebaseio.com",
+    projectId: "codersbay-test-2be11",
+    storageBucket: "codersbay-test-2be11.appspot.com",
+    messagingSenderId: "948506290079",
+    appId: "1:948506290079:web:3ff2d1c2ea783d7da5ffaa",
+    measurementId: "G-2DCZ6HVHTC"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
 
 
 // Assign the reference to the database to a variable named 'database'
 // var database = ...
+var database = firebase.database();
 
 
 // Initial Values
