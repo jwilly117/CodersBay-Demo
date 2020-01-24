@@ -1,6 +1,8 @@
 // Initialize Firebase
 // Make sure to match the configuration to the script version number in the HTML
 // (Ex. 3.0 != 3.7.0)
+// var firebase = require('firebase/app');
+
   // Your web app's Firebase configuration
   var firebaseConfig = {
     apiKey: "AIzaSyCXFsavNw_VLVouWdzOTiu9q3BDPl1MYqc",
@@ -15,6 +17,8 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
+
+  
 
 
 // Assign the reference to the database to a variable named 'database'
@@ -39,14 +43,22 @@ database.ref().on("value", function(snapshot) {
 
     // Set the variables for highBidder/highPrice equal to the stored values in firebase.
     // highPrice = ...
+    highPrice = snapshot.val().highPrice;
     // highBidder = ...
+    highBidder = snapshot.val().highBidder;
+
 
 
     // Change the HTML to reflect the stored values
+    // id = "highest-bidder"
+    // id = "highest-price"
+    $("#highest-bidder").text(highBidder);
+    $("#highest-price").text(highPrice);
 
 
     // Print the data to the console.
-
+    console.log(highPrice);
+    console.log(highBidder);
 
   }
 
@@ -54,7 +66,8 @@ database.ref().on("value", function(snapshot) {
   else {
 
     // Change the HTML to reflect the initial values
-
+    $("#highest-bidder").text("none");
+    $("#highest-price").text("none");
 
     // Print the data to the console.
 
